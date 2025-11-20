@@ -6,7 +6,7 @@ const createLibroSchema = Joi.object({
         .max(200)
         .required()
         .messages({
-            'string-empty':'el titulo no puede estar vacio',
+            'string.empty':'el titulo no puede estar vacio',
             'sting.min': 'el titulo debe tener 1 caracter al menos',
             'string.max': 'el titulo no puede tener mas de 200 caracteres',
             'any.required': 'el titulos es obligatorio'

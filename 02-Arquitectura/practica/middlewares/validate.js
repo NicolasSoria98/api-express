@@ -9,7 +9,7 @@ function validate(schema) {
                 const errors= error.details.map(detail => detail.message);
                 return res.status(400).json({
                     error: 'error de validacion',
-                    detaller: errors
+                    detalles: errors
                 })
             }
             req.body = value;

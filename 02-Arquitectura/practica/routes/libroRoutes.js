@@ -9,8 +9,8 @@ const {
 } = require('../validations/libroSchemas');
 router.get('/', controller.getLibros)
 router.get('/:id', controller.getLibroById)
-router.post('/',validate(createLibroSchema), requireAuth, controller.createLibro)
-router.patch('/:id', validate(updateLibroSchema), controller.updateLibro)
+router.post('/',requireAuth,validate(createLibroSchema),  controller.createLibro)
+router.patch('/:id',requireAuth, validate(updateLibroSchema),  controller.updateLibro)
 router.delete('/:id', requireAuth, controller.deleteLibro)
 router.post('/:id/prestar', controller.prestarLibro)
 router.post('/:id/devolver', controller.devolverLibro)
