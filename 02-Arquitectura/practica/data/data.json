@@ -16,6 +16,15 @@
       "disponible": true,
       "prestamos": 0,
       "id": 2
+    },
+    {
+      "titulo": "El Quijote",
+      "autor": "Cervantes",
+      "año": 1605,
+      "genero": "Ficción",
+      "disponible": true,
+      "prestamos": 0,
+      "id": 3
     }
   ]
 }
