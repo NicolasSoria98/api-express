@@ -2,7 +2,7 @@ const adventurerService = require('../services/adventurerService')
 
 async function createAdventurer(req, res, next) {
     try {
-        const adventurer = adventurerService.createAdventurer(req.body)
+        const adventurer = await adventurerService.createAdventurer(req.body)
         res.status(201).json(adventurer)
     } catch (error){
         next(error)
@@ -10,7 +10,7 @@ async function createAdventurer(req, res, next) {
 }
 async function getAdventurers(req, res, next) {
     try {
-        const adventurers = adventurerService.getAdventurers(req.query)
+        const adventurers = await adventurerService.getAdventurers(req.query)
         res.json(adventurers)
     
     } catch (error) {

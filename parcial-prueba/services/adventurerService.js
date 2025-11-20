@@ -24,12 +24,12 @@ async function createAdventurer(data) {
 async function getAdventurers(filters ={}) {
     let adventurers = await repository.getAllAdventurers();
     if(filters.skills) {
-        adventurers = adventurers.filters(a =>
-            a.skills.includes(filters.skills)
+        adventurers = adventurers.filter(a =>
+            a.skills.includes(filters.skill)
         )
     }
     if(filters.minLevel) {
-        adventurers = adventurers.filters(a => a.level >= parseInt(filters.minLevel))
+        adventurers = adventurers.filter(a => a.level >= parseInt(filters.minLevel))
     }
     return adventurers;
 }
@@ -43,7 +43,7 @@ async function updateStamina(id, amount) {
     if(adventurer.stamina < 0){
         adventurer.stamina = 0
     }
-    return await repository.updateStamina(id, adventurer)
+    return await repository.updateAdventurer(id, adventurer)
 }
 
 module.exports = {

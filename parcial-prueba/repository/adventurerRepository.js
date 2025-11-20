@@ -7,11 +7,11 @@ async function readData() {
     const data = await fs.readFile(filePath, 'utf-8')
     return JSON.parse(data)
 }
-async function saveData() {
+async function saveData(data) {
     await fs.writeFile(filePath, JSON.stringify(data, null, 2))
 }
 async function getAllAdventurers() {
-    data = await readData()
+    const data = await readData()
     return data.adventurers
 }
 async function getAdveturerById(id) {
