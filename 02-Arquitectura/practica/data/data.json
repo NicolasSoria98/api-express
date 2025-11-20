@@ -1,12 +1,21 @@
 {
-    "libros" : [ {
-        "id": 1,
-        "titulo": "1984",
-        "autor": "George Orwell",
-        "año": 1949,
-        "genero": "Ficción",
-        "disponible": true,
-        "prestamos": 0
+  "libros": [
+    {
+      "id": 1,
+      "titulo": "1984",
+      "autor": "George Orwell",
+      "año": 1949,
+      "genero": "Ficción",
+      "disponible": true,
+      "prestamos": 0
+    },
+    {
+      "titulo": "pajara pinta",
+      "autor": "pajara",
+      "genero": "Ficción",
+      "disponible": true,
+      "prestamos": 0,
+      "id": 2
     }
-    ]
+  ]
 }

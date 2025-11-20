@@ -19,10 +19,10 @@ async function getLibros(req, res, next) {
         next(error)
     }
 }
-async function getLibrosById (req, res, next) {
+async function getLibroById (req, res, next) {
     try {
         const {id} = req.params;
-        const libro = await libroService.getLibrosById(id);
+        const libro = await libroService.getLibroById(id);
         res.json(libro)
     } catch (error) {
         next(error)
@@ -41,7 +41,7 @@ async function updateLibro (req, res, next) {
 async function deleteLibro(req, res, next) {
     try {
         const {id} = req.params
-        const eliminado = await libroService.deletelibro(id)
+        const eliminado = await libroService.deleteLibro(id)
         res.json({
             mensaje: 'libro eliminado',
             libro: eliminado
@@ -71,7 +71,7 @@ async function devolverLibro(req, res, next) {
 module.exports =  {
     createLibro,
     getLibros,
-    getLibrosById,
+    getLibroById,
     updateLibro,
     deleteLibro,
     prestarLibro,

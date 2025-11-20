@@ -52,8 +52,8 @@ async function getLibros(filters ={}) {
 }
 
 async function getLibroById(id) {
-    const existe = await repository.getLibroById(id);
-    if (!existe) {
+    const libro = await repository.getLibroById(id);
+    if (!libro) {
         throw new Error('Libro no encontrado')
     }
     return libro
