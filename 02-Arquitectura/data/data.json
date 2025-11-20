@@ -1,0 +1,12 @@
+{
+  "estudiantes": [
+    {
+      "nombre": "Juan Pérez",
+      "carrera": "Sistemas",
+      "nivel": 2,
+      "puntos": 50,
+      "activo": true,
+      "id": 1
+    }
+  ]
+}

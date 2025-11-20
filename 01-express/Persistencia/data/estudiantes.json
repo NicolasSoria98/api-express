@@ -1,0 +1,14 @@
+{
+  "estudiantes": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "carrera": "Sistemas"
+    },
+    {
+      "id": 2,
+      "nombre": "Guadalupe Retamozo",
+      "carrera": "Geografía"
+    }
+  ]
+}

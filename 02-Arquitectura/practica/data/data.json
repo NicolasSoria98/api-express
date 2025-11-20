@@ -1,0 +1,12 @@
+{
+    "libro" : [ {
+        "id": 1,
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "año": 1949,
+        "genero": "Ficción",
+        "disponible": true,
+        "prestamos": 0
+    }
+    ]
+}
