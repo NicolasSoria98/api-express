@@ -7,7 +7,8 @@ async function createAdventurer(data) {
     if(!data.skills || !Array.isArray(data.skills)){
         throw new Error('debe tener skills y debe ser array')
     }
-    const todos = todos.length > 0
+    const todos= await repository.getAllAdventurers;
+    const id = todos.length > 0
     ? Math.max(...todos.map(a => a.id)) + 1
     : 1
     const adventurer = {
@@ -23,7 +24,7 @@ async function createAdventurer(data) {
 
 async function getAdventurers(filters ={}) {
     let adventurers = await repository.getAllAdventurers();
-    if(filters.skills) {
+    if(filters.skill) {
         adventurers = adventurers.filter(a =>
             a.skills.includes(filters.skill)
         )
