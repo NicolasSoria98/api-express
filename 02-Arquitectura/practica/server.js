@@ -9,11 +9,6 @@ app.use(timer);
 const libroRoutes = require('./routes/libroRoutes')
 
 app.use('/libros', libroRoutes)
-
-app.use((err, req, res, next) =>{
-    console.error(err.stack);
-    res.status(400).json({error: err.message})
-})
 app.use(errorHandler);
 const PORT = 3000;
 app.listen(PORT, () => {
