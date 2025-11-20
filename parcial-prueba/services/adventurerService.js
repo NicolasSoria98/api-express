@@ -7,7 +7,7 @@ async function createAdventurer(data) {
     if(!data.skills || !Array.isArray(data.skills)){
         throw new Error('debe tener skills y debe ser array')
     }
-    const todos= await repository.getAllAdventurers;
+    const todos= await repository.getAllAdventurers();
     const id = todos.length > 0
     ? Math.max(...todos.map(a => a.id)) + 1
     : 1
