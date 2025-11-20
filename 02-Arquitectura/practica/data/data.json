@@ -1,5 +1,5 @@
 {
-    "libro" : [ {
+    "libros" : [ {
         "id": 1,
         "titulo": "1984",
         "autor": "George Orwell",

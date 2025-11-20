@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
 app.use(express.json())
-const librosRoutes = require('./routes/libroRoutes')
+const libroRoutes = require('./routes/libroRoutes')
 
-app.use('./libros', libroRoutes)
+app.use('/libros', libroRoutes)
 
 app.use((err, req, res, next) =>{
     console.error(err.stack);

@@ -22,7 +22,7 @@ async function getLibros(req, res, next) {
 async function getLibrosById (req, res, next) {
     try {
         const {id} = req.params;
-        const libro = await librosService.getLibrosById(id);
+        const libro = await libroService.getLibrosById(id);
         res.json(libro)
     } catch (error) {
         next(error)
@@ -41,7 +41,7 @@ async function updateLibro (req, res, next) {
 async function deleteLibro(req, res, next) {
     try {
         const {id} = req.params
-        const eliminado = await libroService.deleteEstudiante(id)
+        const eliminado = await libroService.deletelibro(id)
         res.json({
             mensaje: 'libro eliminado',
             libro: eliminado
@@ -61,7 +61,7 @@ async function prestarLibro(req, res, next) {
 }
 async function devolverLibro(req, res, next) {
     try {
-        const libro = await libroController.devolverLibro(req.params.id)
+        const libro = await libroService.devolverLibro(req.params.id)
         res.json(libro)
     } catch (error) {
         next(error)

@@ -4,7 +4,7 @@ const filePath = path.join(__dirname, '../data/data.json')
 
 async function readData() {
     try {
-        const data = await fdatasync.readFile(filePath, 'utf-8')
+        const data = await fs.readFile(filePath, 'utf-8')
         return JSON.parse(data)
     } catch (error) {
         return { libros: [] };
@@ -12,7 +12,7 @@ async function readData() {
 }
 
 async function saveData(data) {
-    await fdatasync.writeFile(filePath, JSON.stringify(data, null, 2))
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2))
 }
 async function getAllLibros(){
     const data = await readData();

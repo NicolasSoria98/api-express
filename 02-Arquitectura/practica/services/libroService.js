@@ -1,4 +1,4 @@
-const repository = require('../../repositories/libroRepository')
+const repository = require('../repositories/libroRepository')
 
 const generosValidos = ["Ficción", "No Ficción", "Ciencia", "Historia", "Biografía"];
 
@@ -6,7 +6,7 @@ function validarLibros(libro) {
     if(!libro.titulo || !libro.autor) {
         throw new Error('titulo y autos son obligatorios')
     }
-    if(!libro.año < 1000 || libro.año > 2025) {
+    if(libro.año < 1000 || libro.año > 2025) {
         throw new Error ('años entre 1000 y 2025')
     }
     if(!generosValidos.includes(libro.genero)) {
@@ -24,7 +24,7 @@ async function createLibro(data) {
         prestamos: 0
 
     };
-    validarLibros();
+    validarLibros(libro);
     const todos = await repository.getAllLibros()
     libro.id = todos.length > 0
         ? Math.max(...todos.map(l => l.id)) +1
@@ -36,7 +36,7 @@ async function getLibros(filters ={}) {
     let libros = await repository.getAllLibros();
     if (filters.genero) {
         libros = libros.filter(l =>
-            l.genero.toLowerCase() === filter.genero.toLowerCase()
+            l.genero.toLowerCase() === filters.genero.toLowerCase()
         );
     }
     if (filters.disponible !== undefined) {
@@ -51,17 +51,17 @@ async function getLibros(filters ={}) {
     return libros;
 }
 
-async function getLibroById(id, updates) {
+async function getLibroById(id) {
     const existe = await repository.getLibroById(id);
     if (!existe) {
         throw new Error('Libro no encontrado')
     }
-    return await repository.updateLibro(id, updates)
+    return libro
 }
 async function updateLibro(id, updates) {
     const existe = await repository.getLibroById(id)
     if(!existe) {
-        throw new error('Libro no encontrado')
+        throw new Error('Libro no encontrado')
     }
     return await repository.updateLibro(id, updates);
 }
@@ -72,7 +72,7 @@ async function deleteLibro(id) {
         )
 
     }
-    return await repository.deleteLibro(id)
+    return eliminado
 }
 async function prestarLibro(id) {
     const libro = await repository.getLibroById(id)
