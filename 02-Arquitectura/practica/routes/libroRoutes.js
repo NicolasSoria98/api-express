@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require('../controllers/libroController.js')
 
 router.get('/', controller.getLibros)
-router.get('/:id', controller.getLibrosById)
+router.get('/:id', controller.getLibroById)
 router.post('/', controller.createLibro)
 router.patch('/:id', controller.updateLibro)
 router.delete('/:id', controller.deleteLibro)
