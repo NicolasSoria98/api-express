@@ -1,0 +1,17 @@
+{
+  "adventurers": [{
+    "id" : 1,
+    "name": "tyrion",
+    "level": 1,
+    "experience": 0,
+    "stamina": 100,
+    "skills" : ["carga", "lanza"]
+  }],
+  "missions": [{
+    "id" : 1,
+    "title": "laescondida",
+    "difficulty": 7,
+    "staminaCost": 30,
+    "rewardFormula": "difficulty * 10 + staminaCost * 2",    "requiredSkill": "carga"
+  }]
+}
